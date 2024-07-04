@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELLNET - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .navbar {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            background-color: rgba(240, 241, 205, 0.7); /* Transparent sky blue background */
+            padding: 10px 20px;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: rgb(126, 27, 27);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: rgb(52, 31, 138);
+            padding: 14px 20px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #871f1f; /* Darker shade of orange on hover */
+        }
+        .navbar .menu {
+            display: flex;
+            margin-left: auto;
+        }
+        .main-content {
+            padding: 50px 10px 10px;
+            text-align: center;
+        }
+        .main-content h1 {
+            color: rgb(96, 23, 23);
+        }
+        .main-content p {
+            color: rgb(52, 21, 110);
+        }
+        .images {
+            margin: 30px 0;
+        }
+        .images img {
+            width: 1500px; /* Adjust the size as needed */
+            height: auto;
+            margin: 10px;
+        }
+        .footer {
+            background-color: rgba(176, 211, 176, 0.7); /* Transparent sky blue background */
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .footer a {
+            text-decoration: none;
+            color: rgb(52, 31, 138);
+            padding: 0 15px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #871f1f; /* Darker shade of orange on hover */
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: rgba(240, 241, 205, 0.7); /* Match navbar color */
+            color: rgb(52, 31, 138);
+            padding: 14px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropbtn:hover, .dropbtn:focus {
+            color: #871f1f; /* Darker shade of orange on hover */
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">SELLNET</div>
+        <div class="menu">
+            <a href="login.html">Login</a> 
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="#rate-us">Rate Us</a>
+            <div class="dropdown">
+                <button class="dropbtn">Profile</button>
+                <div class="dropdown-content">
+                    <a href="#settings">Settings</a>
+                    <a href="#logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <h1>Welcome to SELLNET</h1>
+        <p>Your one-stop solution for all your selling needs. Explore our services and get in touch with us for more information.</p>
+        <div class="images">
+            <img src="sellnet.jpg" alt="Money Image">
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="#help-center">Help Center</a>
+        <a href="#terms">Terms</a>
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#contact-us">Contact Us</a>
+        <p>&copy; 2024 SELLNET. All rights reserved.</p>
+    </div>
+
+    <script>
+        document.querySelector('.dropbtn').addEventListener('click', function() {
+            document.querySelector('.dropdown-content').classList.toggle('show');
+        });
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName('dropdown-content');
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
